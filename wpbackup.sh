@@ -49,7 +49,10 @@ mysqldump -h "$DB_HOST" -u "$DB_USER" -p"$DB_PASSWORD" "$DB_NAME" > "$DB_FILE"
 if [[ $? -eq 0 ]]; then
     echo "
     Database downloaded to public_html: $DB_FILE
-    Now, let's zip the public_html folder"
+    
+    Now, let's zip the public_html folder
+    
+    "
 else
     echo "Error: Database backup failed."
     exit 1
@@ -64,10 +67,10 @@ zip -rq "$ZIP_FILE" .
 # Confirm if the zip operation was successful
 if [[ $? -eq 0 ]]; then
     echo "
-    public_html folder and database backup successfull.
+    public_html folder and database backup sucessfully created.
     
-    Back up sucessfully created.
     Back up file name: $ZIP_FILE
+    
     The website backup is located in the parent directory of the public_html file."
 else
     echo "Error: Failed to zip public_html folder."
