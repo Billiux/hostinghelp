@@ -4,7 +4,8 @@
 set -e
 
 echo "
-    Miguel: Don't worry, nothing bad will happen, I think!"
+    Miguel CSE 
+    Creting a back up of this WordPress website"
 
 # Define a timestamp variable
 TIMESTAMP=$(date +%Y%m%d%H%M%S)
