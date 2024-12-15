@@ -3,7 +3,7 @@
 # Exit immediately if a command exits with a non-zero status
 set -e
 
-echo "\033[33m
+echo -e "\033[33m
     Miguel CSE: 
     Creting a back up of this WordPress website"
 
