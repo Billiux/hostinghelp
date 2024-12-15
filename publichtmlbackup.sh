@@ -23,7 +23,9 @@ if [[ $? -eq 0 ]]; then
     
     Back up file name: $ZIP_FILE
     
-    The website backup is located in the parent directory of the public_html file."
+    The website backup is located in the parent directory of the public_html file.
+    
+    "
 else
     echo "Error: Failed to zip public_html folder."
     exit 1
