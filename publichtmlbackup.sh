@@ -20,7 +20,9 @@ zip -rq "$ZIP_FILE" .
 if [[ $? -eq 0 ]]; then
     echo "
     public_html back up sucessfully created.
+    
     Back up file name: $ZIP_FILE
+    
     The website backup is located in the parent directory of the public_html file."
 else
     echo "Error: Failed to zip public_html folder."
