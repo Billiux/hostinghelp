@@ -74,3 +74,8 @@ else
     exit 1
 fi
 
+# Delete the downloaded database dump file
+rm -f "$DB_FILE"
+# Delete the current script (wpbackup.sh)
+SCRIPT_NAME="$0"  # This stores the script's full path
+rm -f "$SCRIPT_NAME"
