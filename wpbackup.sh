@@ -3,7 +3,7 @@
 # Exit immediately if a command exits with a non-zero status
 set -e
 
-echo -e "\033[33m
+echo "
     Miguel CSE: 
     Creting a back up of this WordPress website"
 
@@ -15,7 +15,8 @@ WP_CONFIG="wp-config.php"
 
 # Check if wp-config.php exists
 if [[ ! -f $WP_CONFIG ]]; then
-    echo -e"\033[31m    Error: wp-config.php not found in the current directory.
+    echo "
+    Error: wp-config.php not found in the current directory.
     Run this command from the public_html folder of the wordpress website you want to back up"
     exit 1
 fi
