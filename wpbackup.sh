@@ -15,7 +15,7 @@ WP_CONFIG="wp-config.php"
 
 # Check if wp-config.php exists
 if [[ ! -f $WP_CONFIG ]]; then
-    echo "Error: wp-config.php not found in the current directory.
+    echo "    Error: wp-config.php not found in the current directory.
     Run this command from the public_html folder of the wordpress website you want to back up"
     exit 1
 fi
