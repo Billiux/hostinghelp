@@ -71,7 +71,7 @@ if [[ $? -eq 0 ]]; then
     
     Back up file name: $ZIP_FILE
     
-    The website backup is located in the parent directory of the public_html file.
+    The website backup is located in the parent directory of the public_html folder.
     
     "
 else
