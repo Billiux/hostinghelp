@@ -38,15 +38,15 @@ if [[ -z "$DB_NAME" || -z "$DB_USER" || -z "$DB_PASSWORD" || -z "$DB_HOST" ]]; t
 fi
 
 # Define the backup SQL file name with timestamp
-BACKUP_FILE="db-backup-${TIMESTAMP}.sql"
+DB_FILE="db-backup-${TIMESTAMP}.sql"
 
 # Create a database dump and save it inside public_html
-mysqldump -h "$DB_HOST" -u "$DB_USER" -p"$DB_PASSWORD" "$DB_NAME" > "$BACKUP_FILE"
+mysqldump -h "$DB_HOST" -u "$DB_USER" -p"$DB_PASSWORD" "$DB_NAME" > "$DB_FILE"
 
 # Confirm if the database dump was successful
 if [[ $? -eq 0 ]]; then
     echo "
-    Database downloaded to public_html: $BACKUP_FILE
+    Database downloaded to public_html: $DB_FILE
     Now, let's zip the public_html folder"
 else
     echo "Error: Database backup failed."
