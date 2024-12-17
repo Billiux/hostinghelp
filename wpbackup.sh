@@ -4,7 +4,6 @@
 set -e
 
 echo "
-    Miguel CSE: 
     Creting a back up of this WordPress website"
 
 # Define a timestamp variable
