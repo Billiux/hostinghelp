@@ -3,6 +3,9 @@
 # Exit immediately if a command exits with a non-zero status
 set -e
 
+echo "
+    Downloading database to public_html"
+
 # Path to wp-config.php
 WP_CONFIG="wp-config.php"
 
