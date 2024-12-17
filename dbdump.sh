@@ -38,8 +38,7 @@ else
     exit 1
 fi
 
-# Navigate one level up
-#cd ..
+rm -f "$SCRIPT_NAME"
 
 # Print the current directory
 CURRENT_DIR=$(pwd)
