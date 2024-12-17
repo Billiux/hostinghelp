@@ -45,31 +45,32 @@ fi
 CURRENT_DIR=$(pwd)
 echo "    DB dump file located at: $CURRENT_DIR/$BACKUP_FILE"
 
-# ----------------------- New Section: Zipping public_html -----------------------
+# ----------------------- New Section: Zipping the Current Directory -----------------------
 
 # Define variables for zipping
-PUBLIC_HTML_DIR="public_html"
-PARENT_DIR=".."
 TIMESTAMP=$(date +%Y%m%d%H%M%S)
 ZIP_FILE="public_html_backup-$TIMESTAMP.zip"
+PARENT_DIR=".."
+DIR_NAME=$(basename "$CURRENT_DIR")
 
-# Check if public_html directory exists
-if [[ ! -d "$PUBLIC_HTML_DIR" ]]; then
-    echo "Error: $PUBLIC_HTML_DIR directory not found."
-    exit 1
-fi
+# Navigate to the parent directory
+echo "Navigating to the parent directory: $PARENT_DIR"
+cd "$PARENT_DIR"
 
 # Perform the zipping operation
-echo "Zipping $PUBLIC_HTML_DIR into $PARENT_DIR/$ZIP_FILE..."
-zip -r "$PARENT_DIR/$ZIP_FILE" "$PUBLIC_HTML_DIR"
+echo "Zipping the current directory ($DIR_NAME) into $ZIP_FILE..."
+zip -r "$ZIP_FILE" "$DIR_NAME"
 
 # Check if zip was successful
 if [[ $? -eq 0 ]]; then
-    echo "    Successfully zipped $PUBLIC_HTML_DIR to $PARENT_DIR/$ZIP_FILE"
+    echo "    Successfully zipped $DIR_NAME to $PARENT_DIR/$ZIP_FILE"
 else
-    echo "Error: Failed to zip $PUBLIC_HTML_DIR."
+    echo "Error: Failed to zip $DIR_NAME."
     exit 1
 fi
+
+# Navigate back to the original directory (optional)
+cd "$CURRENT_DIR"
 
 # ----------------------- End of Zipping Section -----------------------
 
