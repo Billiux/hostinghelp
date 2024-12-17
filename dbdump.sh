@@ -6,6 +6,9 @@ set -e
 echo "
     Downloading database to public_html"
 
+# Define a timestamp variable
+TIMESTAMP=$(date +%Y%m%d%H%M%S)
+
 # Path to wp-config.php
 WP_CONFIG="wp-config.php"
 
@@ -41,8 +44,9 @@ else
     exit 1
 fi
 
-rm -f "$SCRIPT_NAME"
+rm -- "$0"
 
 # Print the current directory
 CURRENT_DIR=$(pwd)
-echo "    DB dump file called: $BACKUP_FILE"
+echo "    DB dump file located at: $CURRENT_DIR/$BACKUP_FILE"
+
